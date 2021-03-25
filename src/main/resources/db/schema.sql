@@ -1,0 +1,17 @@
+CREATE TABLE COURSES (
+    id BIGINT AUTO_INCREMENT,
+    name VARCHAR(250) NOT NULL,
+    name_english VARCHAR(250) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE SESSIONS (
+    id BIGINT AUTO_INCREMENT,
+    name VARCHAR(250) NOT NULL,
+    name_english VARCHAR(250) NOT NULL,
+    trimester BIGINT NOT NULL,
+    seen BOOLEAN NOT NULL,
+    course_id BIGINT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (course_id) REFERENCES COURSES(id)
+);
